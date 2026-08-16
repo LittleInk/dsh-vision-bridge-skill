@@ -1,0 +1,26 @@
+{
+  "name": "dsh-llm-vision-bridge",
+  "version": "0.1.0",
+  "description": "DeepSeek adapter wrapper for the dsh web profile: describes image attachments via an OpenAI-compatible vision API (DashScope qwen-vl-max by default), then delegates the text-only request to DeepSeek. Lets the session model stay deepseek-v4-flash while pasted images are read automatically.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-llm": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-llm-deepseek": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-credentials": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-launch-environment": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-settings": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-home-paths": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-anonymous-user-id": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-timeout": "^0.1.0-rc.6",
+    "@deepseek-ai/schemastery": "^0.1.0-rc.6"
+  }
+}

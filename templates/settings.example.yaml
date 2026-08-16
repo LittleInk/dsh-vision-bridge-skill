@@ -1,0 +1,28 @@
+# Optional: only needed to override defaults. Every value shown here IS the
+# default. Put this section into <DSH_HOME>/settings.yaml (hot-reloaded, no
+# restart needed) and change only what you need.
+#
+# NEVER put real API keys in this file's commit history; keys resolve from
+# <DSH_HOME>/.credentials.yaml or environment variables at request time.
+
+llm-vision-bridge:
+  # ---- DeepSeek connection (same semantics as the stock llm-deepseek) ----
+  apiKeyEnv: DEEPSEEK_API_KEY
+  # baseURL: https://api.deepseek.com        # or $DEEPSEEK_BASE_URL
+  # thinking: enabled | disabled
+  # reasoningEffort: off | high | max
+  models:
+    - id: deepseek-v4-flash
+      name: DeepSeek-V4-Flash
+      contextWindow: 1000000
+    - id: deepseek-v4-pro
+      name: DeepSeek-V4-Pro
+      contextWindow: 1000000
+  # ---- vision (识别) half ----
+  vision:
+    apiKeyEnv: DASHSCOPE_API_KEY
+    baseURL: https://dashscope.aliyuncs.com/compatible-mode/v1
+    model: qwen-vl-max
+    maxTokens: 1024
+    timeoutMs: 60000
+    descriptionPrompt: 请用中文详细描述这张图片的内容，包括其中的文字、布局、颜色和所有可辨识的细节，供一个只能阅读文字的模型理解。

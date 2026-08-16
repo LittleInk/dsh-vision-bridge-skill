@@ -1,0 +1,14 @@
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+
+# Vision bridge: image blocks in chat are flattened into text descriptions by
+# an OpenAI-compatible vision API (DashScope qwen-vl-max, key DASHSCOPE_API_KEY)
+# and the text-only request is delegated to DeepSeek, which produces the final
+# answer. The stock llm-deepseek row is disabled because this bridge registers
+# the same `deepseek-official` provider route.
+- id: llm-deepseek
+  disabled: true
+- insert:
+    - id: llm-vision-bridge
+      name: 'dsh-llm-vision-bridge'
