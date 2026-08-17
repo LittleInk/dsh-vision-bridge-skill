@@ -220,4 +220,4 @@ Remove-Item $dest -Recurse -Force
 
 ## 相关
 
-- 运行时识图（把单张图片转文字，与聊天路由无关）：可搭配已有的 `claude-vision-skill`（`vision.js`）使用；注意该技能目录里的 `.env` 含真实 Key，**不要**一起提交。
+- 运行时识图（把单张图片转文字，与聊天路由无关）：可搭配已有的 `dsh-vision-bridge-skill`（`vision.js`）使用；注意该技能目录里的 `.env` 含真实 Key，**不要**一起提交。

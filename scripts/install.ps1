@@ -7,7 +7,7 @@ Install the dsh vision bridge into a dsh web profile.
 2. Replaces profiles/<ProfileName>/cordis.patch.yml with templates/cordis.patch.yml (backup first)
 3. Ensures DASHSCOPE_API_KEY exists in <DSH_HOME>/.credentials.yaml
    (read from $env:DASHSCOPE_API_KEY, then <DSH_HOME>/.env, then a sibling
-   claude-vision-skill/.env if present)
+   dsh-vision-bridge-skill/.env if present)
 4. Prints the restart reminder.
 
 SAFETY: never prints a full API key; keys are only echoed masked (last 4 chars).
@@ -64,7 +64,7 @@ if (-not $SkipCredentials) {
         if ($m.Success) { $key = $m.Groups[1].Value }
     }
     if (-not $key) {
-        $cand = Join-Path $PSScriptRoot "..\..\.dsh\skills\claude-vision-skill\.env"
+        $cand = Join-Path $PSScriptRoot "..\..\.dsh\skills\dsh-vision-bridge-skill\.env"
         if (Test-Path $cand) {
             $m = [regex]::Match([IO.File]::ReadAllText($cand), "(?m)^DASHSCOPE_API_KEY\s*=\s*(\S+)")
             if ($m.Success) { $key = $m.Groups[1].Value }
